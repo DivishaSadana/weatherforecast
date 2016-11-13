@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Change City");
         final EditText input = new EditText(this);
-        input.setText(InputType.TYPE_CLASS_TEXT);
+//        input.setText(InputType.TYPE_CLASS_TEXT);
+        input.setInputType(InputType.TYPE_CLASS_TEXT);
         builder.setView(input);
         builder.setPositiveButton("Go", new DialogInterface.OnClickListener() {
 

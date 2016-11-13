@@ -1,6 +1,7 @@
 package com.android.weatherapp;
 
 import android.content.Context;
+import android.util.Log;
 
 import org.json.JSONObject;
 
@@ -16,6 +17,7 @@ public class RemoteFetch {
 
     private static final String OPEN_WEATHER_MAP_API =
             "http://api.openweathermap.org/data/2.5/weather?q=%s&units=metric";
+    private static String TAG="Remote fetch";
 
     public static JSONObject getJSON(Context context, String city) {
         try {
@@ -43,7 +45,7 @@ public class RemoteFetch {
             return data;
 
         } catch (Exception e){
-
+            Log.e(TAG, "getJSON: ",e );
             return null;
         }
     }

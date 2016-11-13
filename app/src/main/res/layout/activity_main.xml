@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FF0099CC"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="Merge Root Frame">
 
 </FrameLayout>

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,7 @@ public class WeatherFragment extends Fragment {
     TextView weatherIcon;
 
     Handler handler;
+    private String TAG=getClass().getSimpleName();
 
 
     public WeatherFragment() {
@@ -73,8 +75,11 @@ public class WeatherFragment extends Fragment {
         new Thread() {
             @Override
             public void run() {
+                Log.d(TAG, "run: " + city);
                 final JSONObject json = RemoteFetch.getJSON(getActivity(), city);
+                Log.d(TAG, "run: entered thread"+json);
                 if (json == null){
+                    Log.d(TAG, "run:if "+ json);
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
@@ -84,6 +89,7 @@ public class WeatherFragment extends Fragment {
                         }
                     });
                 }else {
+                    Log.d(TAG, "run: else"+json);
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
