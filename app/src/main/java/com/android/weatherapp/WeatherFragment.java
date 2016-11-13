@@ -2,7 +2,7 @@ package com.android.weatherapp;
 
 
 import android.graphics.Typeface;
-import android.icu.text.DisplayContext;
+//import android.icu.text.DisplayContext;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
