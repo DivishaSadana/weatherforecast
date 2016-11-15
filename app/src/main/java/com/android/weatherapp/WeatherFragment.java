@@ -103,6 +103,7 @@ public class WeatherFragment extends Fragment {
     }
 
     private void renderWeather(JSONObject json){
+        Log.d(TAG, "renderWeather: "+json);
         try {
             cityField.setText(json.getString("name").toUpperCase(Locale.US) + "," + json.getJSONObject("sys").getString("country"));
 
